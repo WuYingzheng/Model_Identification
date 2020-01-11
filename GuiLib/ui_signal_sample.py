@@ -2,11 +2,13 @@
 
 # Form implementation generated from reading ui file 'GuiLib/SignalSample.ui'
 #
-# Created by: PyQt5 UI code generator 5.10.1
+# Created by: PyQt5 UI code generator 5.13.1
 #
 # WARNING! All changes made in this file will be lost!
 
+
 from PyQt5 import QtCore, QtGui, QtWidgets
+
 
 class Ui_SignalSampleDialog(object):
     def setupUi(self, SignalSampleDialog):
@@ -128,5 +130,4 @@ class Ui_SignalSampleDialog(object):
         self.tabWidget_Response.setTabText(self.tabWidget_Response.indexOf(self.widget2), _translate("SignalSampleDialog", "Import Response"))
         self.comboBox_Domain.setItemText(0, _translate("SignalSampleDialog", "时域"))
         self.comboBox_Domain.setItemText(1, _translate("SignalSampleDialog", "频域"))
-
 from mplwidget import MplWidget

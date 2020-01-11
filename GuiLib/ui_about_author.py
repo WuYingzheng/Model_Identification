@@ -2,11 +2,13 @@
 
 # Form implementation generated from reading ui file 'GuiLib/AboutAuthor.ui'
 #
-# Created by: PyQt5 UI code generator 5.10.1
+# Created by: PyQt5 UI code generator 5.13.1
 #
 # WARNING! All changes made in this file will be lost!
 
+
 from PyQt5 import QtCore, QtGui, QtWidgets
+
 
 class Ui_About_Author_Dialog(object):
     def setupUi(self, About_Author_Dialog):
@@ -89,5 +91,4 @@ class Ui_About_Author_Dialog(object):
         self.label_12.setText(_translate("About_Author_Dialog", "作者邮件"))
         self.label_13.setText(_translate("About_Author_Dialog", "获奖经历"))
         self.label_2.setText(_translate("About_Author_Dialog", "<html><head/><body><p>1. 全国研究生数学建模大赛二等奖 </p><p>2. 上海工程技术大学数学建模大赛一等奖 </p><p>3. 上海市长三角地区智慧城市三等奖 </p><p>4. 国家励志奖学金</p></body></html>"))
-
 import csb_rc

@@ -2,11 +2,13 @@
 
 # Form implementation generated from reading ui file 'GuiLib/MainWindow.ui'
 #
-# Created by: PyQt5 UI code generator 5.10.1
+# Created by: PyQt5 UI code generator 5.13.1
 #
 # WARNING! All changes made in this file will be lost!
 
+
 from PyQt5 import QtCore, QtGui, QtWidgets
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -66,4 +68,3 @@ class Ui_MainWindow(object):
         self.action_SignalSample.setText(_translate("MainWindow", "Signal Sampling"))
         self.action_SignalGen.setText(_translate("MainWindow", "Signal Generation"))
         self.actionModel_Design.setText(_translate("MainWindow", "Model Design"))
-
