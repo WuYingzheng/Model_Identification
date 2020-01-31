@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'GuiLib/MainWindow.ui'
 #
-# Created by: PyQt5 UI code generator 5.13.1
+# Created by: PyQt5 UI code generator 5.14.1
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -13,17 +13,52 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(648, 748)
+        MainWindow.resize(1075, 735)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
         self.gridLayout.setObjectName("gridLayout")
-        self.SpectrumLayout = QtWidgets.QVBoxLayout()
+        self.tabWidget = QtWidgets.QTabWidget(self.centralwidget)
+        self.tabWidget.setObjectName("tabWidget")
+        self.widget = QtWidgets.QWidget()
+        self.widget.setObjectName("widget")
+        self.layoutWidget = QtWidgets.QWidget(self.widget)
+        self.layoutWidget.setGeometry(QtCore.QRect(260, 90, 2, 2))
+        self.layoutWidget.setObjectName("layoutWidget")
+        self.SpectrumLayout = QtWidgets.QVBoxLayout(self.layoutWidget)
+        self.SpectrumLayout.setContentsMargins(0, 0, 0, 0)
         self.SpectrumLayout.setObjectName("SpectrumLayout")
-        self.gridLayout.addLayout(self.SpectrumLayout, 0, 0, 1, 1)
+        self.layoutWidget_2 = QtWidgets.QWidget(self.widget)
+        self.layoutWidget_2.setGeometry(QtCore.QRect(280, 130, 2, 2))
+        self.layoutWidget_2.setObjectName("layoutWidget_2")
+        self.SpectrumLayout_2 = QtWidgets.QVBoxLayout(self.layoutWidget_2)
+        self.SpectrumLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.SpectrumLayout_2.setObjectName("SpectrumLayout_2")
+        self.layoutWidget_3 = QtWidgets.QWidget(self.widget)
+        self.layoutWidget_3.setGeometry(QtCore.QRect(280, 130, 2, 2))
+        self.layoutWidget_3.setObjectName("layoutWidget_3")
+        self.SpectrumLayout_3 = QtWidgets.QVBoxLayout(self.layoutWidget_3)
+        self.SpectrumLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.SpectrumLayout_3.setObjectName("SpectrumLayout_3")
+        self.tabWidget.addTab(self.widget, "")
+        self.widget1 = QtWidgets.QWidget()
+        self.widget1.setObjectName("widget1")
+        self.gridLayout_2 = QtWidgets.QGridLayout(self.widget1)
+        self.gridLayout_2.setObjectName("gridLayout_2")
+        self.FrfWidget = MplWidget(self.widget1)
+        self.FrfWidget.setObjectName("FrfWidget")
+        self.gridLayout_2.addWidget(self.FrfWidget, 0, 0, 1, 1)
+        self.tabWidget.addTab(self.widget1, "")
+        self.widget2 = QtWidgets.QWidget()
+        self.widget2.setObjectName("widget2")
+        self.tabWidget.addTab(self.widget2, "")
+        self.tab_3 = QtWidgets.QWidget()
+        self.tab_3.setObjectName("tab_3")
+        self.tabWidget.addTab(self.tab_3, "")
+        self.gridLayout.addWidget(self.tabWidget, 0, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 648, 20))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1075, 22))
         self.menubar.setObjectName("menubar")
         self.menuFile = QtWidgets.QMenu(self.menubar)
         self.menuFile.setObjectName("menuFile")
@@ -55,11 +90,16 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menuAbout.menuAction())
 
         self.retranslateUi(MainWindow)
+        self.tabWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.widget), _translate("MainWindow", "模态几何"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.widget1), _translate("MainWindow", "输入输出"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.widget2), _translate("MainWindow", "模态分析"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("MainWindow", "3D显示"))
         self.menuFile.setTitle(_translate("MainWindow", "File"))
         self.menuSetting.setTitle(_translate("MainWindow", "Setting"))
         self.menuAbout.setTitle(_translate("MainWindow", "About"))
@@ -68,3 +108,4 @@ class Ui_MainWindow(object):
         self.action_SignalSample.setText(_translate("MainWindow", "Signal Sampling"))
         self.action_SignalGen.setText(_translate("MainWindow", "Signal Generation"))
         self.actionModel_Design.setText(_translate("MainWindow", "Model Design"))
+from MplWidget import MplWidget

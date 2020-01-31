@@ -8,9 +8,9 @@ class MplCanvas(FigureCanvas):
         self.figure = Figure()
         self.axes   = self.figure.subplots()
         FigureCanvas.__init__(self, self.figure)
-        FigureCanvas.setSizePolicy(self,
-            QtWidgets.QSizePolicy.Expanding,
-            QtWidgets.QSizePolicy.Expanding)
+        #FigureCanvas.setSizePolicy(self,
+        #    QtWidgets.QSizePolicy.Expanding,
+        #    QtWidgets.QSizePolicy.Expanding)
         FigureCanvas.updateGeometry(self)
 
 

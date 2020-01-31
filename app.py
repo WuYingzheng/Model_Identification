@@ -8,6 +8,7 @@ from PyQt5.QtWidgets import (QApplication, QMainWindow, QDialog, QDateTimeEdit, 
 from matplotlib.backends.backend_qt5agg import (
     FigureCanvas, NavigationToolbar2QT as NavigationToolbar)
 from matplotlib.figure import Figure
+import matplotlib.pyplot as plt
 
 sys.path.append(os.path.dirname(__file__) + "/GuiLib")
 sys.path.append(os.path.dirname(__file__) + "/utility")
@@ -15,12 +16,18 @@ from ui_mainwindow import Ui_MainWindow
 from SignalGen     import SignalGenDialog
 from SignalSample  import SignalSampleDialog
 from AboutAuthor   import AboutAuthorDialog
+from IOprocess     import FrfImpl
+
+from sample        import Sample
 
 class MainWindow(QMainWindow, Ui_MainWindow):
+    force = None
+    accel = None
     def __init__(self, parent=None):
         super().__init__()
         self.setupUi(self)
         self.flag = 0
+        """
         # 定义信号canvas
         signal_figure = Figure(figsize=(5, 2), tight_layout=True)
         signal_canvas = FigureCanvas(signal_figure)
@@ -59,6 +66,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.spectrum_axes[0].magnitude_spectrum(s, Fs=Fs, color='C1')
         # 相位响应
         self.spectrum_axes[1].phase_spectrum(s, Fs=Fs, color='C2')
+        """
 
     @pyqtSlot()
     def on_action_SignalGen_triggered(self):
@@ -69,7 +77,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     @pyqtSlot()
     def on_action_SignalSample_triggered(self):
         dialog = SignalSampleDialog(self)
-        dialog.exec()
+        if dialog.exec():
+            force = dialog.sample_stimulus.sample
+            accel = dialog.sample_response.sample
+            frf = FrfImpl(force[0], accel[0])
+            plt.figure(figsize=(3, 4), dpi=60)
+            #plt.semilogy(frf.x, frf.y, '.', label='via FRF')
+            y = [20, 250, 100000]
+            plt.semilogy(y)
+            plt.title('FRF H1')
+            self.FrfWidget.canvas.axes.semilogy(frf.x, frf.y, 'b')
+            self.FrfWidget.canvas.axes.set_xlim(left=0, right=1600)
+            self.FrfWidget.canvas.draw()
 
     # qt槽函数，当点击关于系统按钮后会触发该函数
     @pyqtSlot()

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'GuiLib/SignalGen.ui'
 #
-# Created by: PyQt5 UI code generator 5.13.1
+# Created by: PyQt5 UI code generator 5.14.1
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -16,6 +16,11 @@ class Ui_SignalGenDialog(object):
         SignalGenDialog.resize(640, 480)
         self.gridLayout_2 = QtWidgets.QGridLayout(SignalGenDialog)
         self.gridLayout_2.setObjectName("gridLayout_2")
+        self.buttonBox = QtWidgets.QDialogButtonBox(SignalGenDialog)
+        self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
+        self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Cancel|QtWidgets.QDialogButtonBox.Ok)
+        self.buttonBox.setObjectName("buttonBox")
+        self.gridLayout_2.addWidget(self.buttonBox, 2, 0, 1, 1)
         self.tabWidget_Response = QtWidgets.QTabWidget(SignalGenDialog)
         self.tabWidget_Response.setObjectName("tabWidget_Response")
         self.tab = QtWidgets.QWidget()
@@ -96,12 +101,7 @@ class Ui_SignalGenDialog(object):
         self.horizontalLayout_6.setStretch(1, 12)
         self.verticalLayout_3.addLayout(self.horizontalLayout_6)
         self.tabWidget_Response.addTab(self.widget_3, "")
-        self.gridLayout_2.addWidget(self.tabWidget_Response, 0, 0, 1, 1)
-        self.buttonBox = QtWidgets.QDialogButtonBox(SignalGenDialog)
-        self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
-        self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Cancel|QtWidgets.QDialogButtonBox.Ok)
-        self.buttonBox.setObjectName("buttonBox")
-        self.gridLayout_2.addWidget(self.buttonBox, 1, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.tabWidget_Response, 1, 0, 1, 1)
 
         self.retranslateUi(SignalGenDialog)
         self.tabWidget_Response.setCurrentIndex(0)
@@ -120,4 +120,4 @@ class Ui_SignalGenDialog(object):
         self.label_Response.setText(_translate("SignalGenDialog", "Response Signal"))
         self.pushButton_Response.setText(_translate("SignalGenDialog", "Open File"))
         self.tabWidget_Response.setTabText(self.tabWidget_Response.indexOf(self.widget_3), _translate("SignalGenDialog", "Random Signal"))
-from mplwidget import MplWidget
+from MplWidget import MplWidget
