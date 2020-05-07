@@ -2,13 +2,11 @@
 
 # Form implementation generated from reading ui file 'GuiLib/SignalSample.ui'
 #
-# Created by: PyQt5 UI code generator 5.14.1
+# Created by: PyQt5 UI code generator 5.10.1
 #
 # WARNING! All changes made in this file will be lost!
 
-
 from PyQt5 import QtCore, QtGui, QtWidgets
-
 
 class Ui_SignalSampleDialog(object):
     def setupUi(self, SignalSampleDialog):
@@ -189,4 +187,5 @@ class Ui_SignalSampleDialog(object):
         self.pushButton_OpenResponse_2.setText(_translate("SignalSampleDialog", "Open File"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), _translate("SignalSampleDialog", "Channel 2"))
         self.tabWidget_Response.setTabText(self.tabWidget_Response.indexOf(self.widget2), _translate("SignalSampleDialog", "Import Response"))
+
 from MplWidget import MplWidget

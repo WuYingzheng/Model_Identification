@@ -87,12 +87,12 @@ class SignalSampleDialog(QDialog, Ui_SignalSampleDialog):
             time = sample.time[N-1]- sample.time[0]
             T = time / N                # 采样周期
             yf = scipy.fftpack.fft(sequence)
-            xf = np.linspace(0.0, 1.0/(2.0*T), N/2)
+            xf = np.linspace(0.0, 1.0/(2.0*T), N//2)
             canvas.axes.plot(xf, 2.0/N * np.abs(yf[:N//2]))
             if canvas is self.MplWidget_Response.canvas:
                 # freqence domain
                 thred = self.doubleSpinBox_UpperFrequence.value()
-                canvas.axes.set_xlim(right=thred)                
+                canvas.axes.set_xlim(right=thred)
         else:
             canvas.axes.plot(sample.time, sequence)
         canvas.axes.set_xlim(left=0)
@@ -107,4 +107,3 @@ class SignalSampleDialog(QDialog, Ui_SignalSampleDialog):
         if (self.sample_response):
             self.plot(self.MplWidget_Response.canvas,
                 self.sample_response, title = "Output Signal")
-

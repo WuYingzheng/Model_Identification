@@ -1,0 +1,6 @@
+numpy
+scipy
+python3-qt5
+matplotlib
+pyFRF
+pyqtgraph

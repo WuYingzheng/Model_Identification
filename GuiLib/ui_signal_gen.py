@@ -2,13 +2,11 @@
 
 # Form implementation generated from reading ui file 'GuiLib/SignalGen.ui'
 #
-# Created by: PyQt5 UI code generator 5.14.1
+# Created by: PyQt5 UI code generator 5.10.1
 #
 # WARNING! All changes made in this file will be lost!
 
-
 from PyQt5 import QtCore, QtGui, QtWidgets
-
 
 class Ui_SignalGenDialog(object):
     def setupUi(self, SignalGenDialog):
@@ -120,4 +118,5 @@ class Ui_SignalGenDialog(object):
         self.label_Response.setText(_translate("SignalGenDialog", "Response Signal"))
         self.pushButton_Response.setText(_translate("SignalGenDialog", "Open File"))
         self.tabWidget_Response.setTabText(self.tabWidget_Response.indexOf(self.widget_3), _translate("SignalGenDialog", "Random Signal"))
+
 from MplWidget import MplWidget
